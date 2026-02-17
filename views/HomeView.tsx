@@ -149,7 +149,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       </section>
 
       {/* OUR TEAM SLIDER - Detailed Bios */}
-      <section className="py-24 bg-slate-50 overflow-hidden relative">
+      {/* <section className="py-24 bg-slate-50 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="flex justify-between items-end">
              <div className="space-y-4">
@@ -216,7 +216,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
           </div>
           
           {/* Slider Indicators */}
-          <div className="flex justify-center space-x-3 mt-12 md:mt-20">
+          {/* <div className="flex justify-center space-x-3 mt-12 md:mt-20">
             {teamMembers.map((_, i) => (
               <button 
                 key={i}
@@ -226,7 +226,117 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */} 
+
+      {/* OUR TEAM SLIDER - Detailed Bios */}
+<section className="py-24 bg-slate-50 overflow-hidden relative">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
+      <div className="space-y-4">
+        <h4 className="text-[#009ADE] font-black uppercase tracking-[0.2em] text-xs">
+          The Advisory Board
+        </h4>
+        <h2 className="text-4xl md:text-5xl font-black text-[#333333]">
+          Our Team
+        </h2>
+      </div>
+
+      <div className="flex space-x-4">
+        <button
+          onClick={() =>
+            setCurrentTeamSlide(
+              (prev) => (prev - 1 + teamMembers.length) % teamMembers.length
+            )
+          }
+          className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
+        >
+          <ArrowLeft size={24} />
+        </button>
+
+        <button
+          onClick={() =>
+            setCurrentTeamSlide((prev) => (prev + 1) % teamMembers.length)
+          }
+          className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
+        >
+          <ArrowRight size={24} />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* KEY FIX HERE */}
+    <div className="relative min-h-[1000px] md:min-h-[560px]">
+
+      {teamMembers.map((member, i) => (
+        <div
+          key={i}
+          className={`transition-all duration-700 flex flex-col md:flex-row gap-12 items-center
+          ${
+            currentTeamSlide === i
+              ? "relative opacity-100 translate-x-0"
+              : "absolute inset-0 opacity-0 translate-x-20 pointer-events-none"
+          }`}
+        >
+
+          {/* IMAGE */}
+          <div className="w-full md:w-1/3 aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl relative group">
+            <img
+              src={member.img}
+              alt={member.name}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+
+          {/* TEXT */}
+          <div className="w-full md:w-2/3 space-y-6">
+
+            <div className="space-y-2">
+              <h3 className="text-3xl md:text-4xl font-black text-[#333333]">
+                {member.name}
+              </h3>
+
+              <p className="text-[#009ADE] text-lg md:text-xl font-bold italic">
+                {member.role}
+              </p>
+            </div>
+
+            <div className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-xl relative border">
+
+              <div className="absolute -top-5 -left-5 bg-[#EAB308] w-12 h-12 rounded-xl flex items-center justify-center text-[#333333]">
+                <Star fill="currentColor" size={22} />
+              </div>
+
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                {member.bio}
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    {/* DOTS */}
+    <div className="flex justify-center space-x-3 mt-12">
+      {teamMembers.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setCurrentTeamSlide(i)}
+          className={`h-2 rounded-full transition-all ${
+            currentTeamSlide === i
+              ? "w-12 bg-[#009ADE]"
+              : "w-4 bg-gray-300"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* OUR WORK SECTION - ELECTION TIMELINE */}
       <section className="py-24 bg-white">
@@ -259,7 +369,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       </section>
 
       {/* CONTACT CTA SECTION - Updated Info */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-[#333333] rounded-[4rem] p-12 md:p-20 text-white grid md:grid-cols-2 gap-16 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#009ADE]/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
@@ -311,9 +421,150 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
         </div>
       </a>
         </div>
-      </section>
+      </section> */}
 
-      <DonationStrip />
+      <section className="py-14 md:py-20 lg:py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+
+    <div className="bg-[#333333] rounded-[2rem] md:rounded-[3rem] lg:rounded-[4rem] 
+    p-6 sm:p-8 md:p-12 lg:p-20 
+    text-white grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 relative overflow-hidden">
+
+      {/* background glow */}
+      <div className="absolute top-0 right-0 w-72 md:w-96 h-72 md:h-96 
+      bg-[#009ADE]/10 rounded-full blur-3xl -mr-40 -mt-40"></div>
+
+      {/* LEFT CONTENT */}
+      <div className="space-y-6 md:space-y-8 relative z-10">
+
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+          Get in <span className="text-[#009ADE]">Touch</span>
+        </h2>
+
+        <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed">
+          Let's discuss how data-driven realism can transform your upcoming campaign.
+        </p>
+
+        <div className="space-y-5 md:space-y-6">
+
+          {/* EMAIL */}
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#009ADE]/20 rounded-2xl flex items-center justify-center text-[#009ADE]">
+              <Mail />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-gray-400">
+                Email Us
+              </p>
+              <p className="text-base md:text-xl font-bold break-all">
+                insightmetrics1@gmail.com
+              </p>
+            </div>
+          </div>
+
+          {/* PHONE */}
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-[#009ADE]/20 rounded-2xl flex items-center justify-center text-[#009ADE]">
+              <Phone />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-gray-400">
+                Call Now
+              </p>
+              <p className="text-base md:text-xl font-bold leading-snug">
+                +91 89433 23509 <br/> +91 99979 19080
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      {/* RIGHT FORM */}
+      <div className="bg-white/5 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] 
+      p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 relative z-10">
+
+        <form className="space-y-5 md:space-y-6">
+
+          {/* MOBILE = 1 column | DESKTOP = 2 column */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+
+            <input
+              type="text"
+              placeholder="Name"
+              className="bg-transparent border-b border-white/20 pb-3 md:pb-4 
+              focus:border-[#009ADE] outline-none text-white font-medium w-full"
+            />
+
+            <input
+              type="tel"
+              placeholder="Phone"
+              className="bg-transparent border-b border-white/20 pb-3 md:pb-4 
+              focus:border-[#009ADE] outline-none text-white font-medium w-full"
+            />
+
+          </div>
+
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full bg-transparent border-b border-white/20 pb-3 md:pb-4 
+            focus:border-[#009ADE] outline-none text-white font-medium"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            rows={3}
+            className="w-full bg-transparent border-b border-white/20 pb-3 md:pb-4 
+            focus:border-[#009ADE] outline-none text-white font-medium"
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-[#009ADE] text-white py-4 md:py-5 rounded-xl md:rounded-2xl 
+            font-black text-base md:text-lg hover:bg-[#007bb3] transition-all shadow-xl"
+          >
+            Send Briefing Request
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+
+    {/* WHATSAPP FLOAT BUTTON */}
+    <a
+      href="https://wa.me/918943323509"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[500] group flex items-center"
+    >
+      <div className="bg-white px-5 py-2 rounded-full shadow-2xl mr-3 
+      opacity-0 group-hover:opacity-100 transition-all 
+      -translate-x-4 group-hover:translate-x-0 hidden md:block">
+
+        <p className="text-[#25D366] font-black text-xs whitespace-nowrap uppercase tracking-widest">
+          Chat with Strategist
+        </p>
+
+      </div>
+
+      <div className="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full 
+      shadow-[0_10px_40px_rgba(37,211,102,0.4)] flex items-center justify-center 
+      hover:scale-110 transition-transform animate-bounce hover:animate-none">
+
+        <MessageCircle size={28} />
+
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+      {/* <DonationStrip /> */}
     </div>
   );
 };

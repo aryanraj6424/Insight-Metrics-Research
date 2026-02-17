@@ -124,7 +124,7 @@ const AboutView: React.FC = () => {
       </section>
 
       {/* LEADERSHIP AUTO-SLIDER (THE TEAM) */}
-      <section className="py-24 bg-white overflow-hidden">
+      {/* <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-20 flex flex-col md:flex-row justify-between items-end gap-10">
           <div className="space-y-4">
             <h4 className="text-[#009ADE] font-black uppercase tracking-[0.4em] text-xs">The Advisory Board</h4>
@@ -200,7 +200,123 @@ const AboutView: React.FC = () => {
              ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* LEADERSHIP AUTO-SLIDER (THE TEAM) */}
+<section className="py-24 bg-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 mb-20 flex flex-col md:flex-row justify-between items-end gap-10">
+    <div className="space-y-4">
+      <h4 className="text-[#009ADE] font-black uppercase tracking-[0.4em] text-xs">The Advisory Board</h4>
+      <h2 className="text-4xl md:text-7xl font-black text-[#333333]">
+        Leadership <span className="text-[#009ADE]">Insights</span>
+      </h2>
+      <div className="w-32 h-2 bg-[#EAB308] rounded-full"></div>
+    </div>
+
+    <div className="flex space-x-4">
+      <button
+        onClick={() => setActiveSlide((prev) => (prev - 1 + teamMembers.length) % teamMembers.length)}
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all shadow-sm"
+      >
+        <ArrowLeft size={26} />
+      </button>
+
+      <button
+        onClick={() => setActiveSlide((prev) => (prev + 1) % teamMembers.length)}
+        className="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all shadow-sm"
+      >
+        <ArrowRight size={26} />
+      </button>
+    </div>
+  </div>
+
+  <div className="max-w-7xl mx-auto px-4">
+
+    {/* HEIGHT FIXED HERE */}
+    <div className="relative min-h-[980px] md:min-h-[620px]">
+
+      {teamMembers.map((member, i) => (
+        <div
+          key={i}
+          className={`transition-all duration-700 flex flex-col md:flex-row gap-10 md:gap-16 items-center
+          ${activeSlide === i ? "relative opacity-100 translate-x-0" : "absolute inset-0 opacity-0 translate-x-24 pointer-events-none"}
+          `}
+        >
+
+          {/* IMAGE FIX */}
+          <div className="w-full md:w-2/5 h-[420px] sm:h-[520px] md:h-auto aspect-[4/5] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl group relative">
+            <img
+              src={member.img}
+              alt={member.name}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/60 to-transparent"></div>
+
+            <div className="absolute bottom-8 left-8">
+              <p className="text-[#EAB308] font-black uppercase tracking-widest text-xs mb-1">
+                Member of Board
+              </p>
+              <h4 className="text-white text-2xl md:text-3xl font-black">
+                {member.name}
+              </h4>
+            </div>
+          </div>
+
+          {/* TEXT FIX */}
+          <div className="w-full md:w-3/5 space-y-8">
+
+            <div className="space-y-3">
+              <div className="inline-flex items-center space-x-2 bg-[#009ADE]/10 px-4 py-2 rounded-full">
+                <Star className="text-[#009ADE]" size={16} fill="currentColor" />
+                <span className="text-[#009ADE] font-black text-xs uppercase tracking-widest">
+                  Expert Consultant
+                </span>
+              </div>
+
+              <h3 className="text-3xl md:text-5xl font-black text-[#333333]">
+                {member.name}
+              </h3>
+
+              <p className="text-[#009ADE] text-lg md:text-xl font-bold italic">
+                {member.role}
+              </p>
+            </div>
+
+            <div className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl border-l-[10px] border-[#EAB308] relative">
+              <Quote className="absolute top-6 right-6 text-slate-100" size={60} />
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed relative z-10">
+                {member.bio}
+              </p>
+            </div>
+
+            <button className="flex items-center space-x-2 text-[#333333] font-black uppercase text-xs tracking-widest hover:text-[#009ADE] transition-colors">
+              <ExternalLink size={18} />
+              <span>Professional Dossier</span>
+            </button>
+
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+    {/* DOTS */}
+    <div className="flex justify-center mt-12 space-x-3">
+      {teamMembers.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setActiveSlide(i)}
+          className={`h-2 transition-all duration-500 rounded-full ${
+            activeSlide === i ? "w-16 bg-[#009ADE]" : "w-4 bg-gray-300"
+          }`}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* OUR WORK - ELECTION HISTORY TIMELINE - Reduced spacing */}
       <section className="py-24 bg-slate-50">
