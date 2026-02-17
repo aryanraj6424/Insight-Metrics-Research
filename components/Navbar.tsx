@@ -259,9 +259,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           {/* MOBILE LOGO */}
           <div className="flex items-center space-x-3">
             <img
-              src="/logo.png"
+              src="/logo1.png"
               alt="Insight Metrics Research"
-              className="h-10 w-auto object-contain bg-white rounded-full p-1"
+              className="h-10 w-auto object-contain "
             />
           </div>
 
