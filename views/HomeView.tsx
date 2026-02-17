@@ -21,25 +21,25 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
     {
       name: "Amal M.",
       role: "Head, Campaign Strategy & Management",
-      img: "./public/img1.png",
+      img: "/img1.png",
       bio: "Served as a Public Policy Consultant with the Government of Uttar Pradesh under initiatives of the Ministry of Rural Development, Government of India. He has led award-winning governance and development projects and headed international research assignments for organisations such as WHO and UNESCAP. With experience as a Campaign Manager in the 2019 Delhi Assembly Elections, 2021 Kerala Assembly Elections, and 2024 Lok Sabha Elections, he brings strong electoral and strategic expertise. He holds a Master’s degree from the University of Delhi."
     },
     {
       name: "Mukesh Chauhan",
       role: "Head, Social Research",
-      img: "./public/img2.png",
+      img: "/img2.png",
       bio: "A Research Coordinator for the United Nations in Uttar Pradesh, India. He has extensive experience in managing and coordinating multi-stakeholder research projects across social and development sectors. His work involves field study design, data collection supervision, and stakeholder engagement, providing strong insights into grassroots socio-economic dynamics. Within the team, he leads social research, community behaviour analysis, and ground intelligence inputs for electoral strategy."
     },
     {
       name: "Leela K.",
       role: "Political Consultant",
-      img: "./public/img3.png",
+      img: "/img3.png",
       bio: "A Public Policy Consultant with the Government of Uttar Pradesh, supporting initiatives aligned with the Ministry of Rural Development, Government of India. She brings experience working with the Government of Kerala through institutions such as the Kerala Institute of Local Administration (KILA) and the Kerala Youth Leadership Academy. She holds an M.A. in English Literature, an LL.B., and specialised training in public policy and governance, along with academic exposure from Durham University, UK."
     },
     {
       name: "Krishna Prasad",
       role: "Content Strategist",
-      img: "./public/img4.png",
+      img: "/img4.png",
       bio: "A Content Strategist and Writer with experience across both product-based and service-based organisations, specialising in advertising, marketing, and digital communication. He has worked in startups and a leading Edtech firm, handling roles such as SEO Writer, Content Analyst, and Content Editor, with a strong track record in creating high-impact, conversion-focused content. He also brings direct electoral experience, having led communication and campaign content for the 2021 Kerala Assembly Elections."
     }
   ];

@@ -124,7 +124,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             >
               {/* CHANGE THIS PATH */}
               <img
-                src="/public/logo1.png"
+                src="/logo1.png"
                 alt="Insight Metrics Research"
                 className="h-14 w-auto object-contain "
               />

@@ -203,7 +203,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           >
             {/* CHANGE THIS PATH */}
             <img
-              src="/public/logo1.png"
+              src="/logo1.png"
               alt="Insight Metrics Research"
               className="h-12 w-auto object-contain"
             />
