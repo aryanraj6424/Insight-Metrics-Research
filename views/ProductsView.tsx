@@ -285,7 +285,7 @@ const ProductsView: React.FC<Props> = () => {
   const products = [
     { 
       id: '1', 
-      name: 'RAJYOG Voterlist', 
+      name: 'Insight Metrics Voterlist', 
       desc: "Our flagship Election Management Solution. Designed to streamline and automate ground activities with seamless analysis of voter lists.",
       icon: <Database />
     },
