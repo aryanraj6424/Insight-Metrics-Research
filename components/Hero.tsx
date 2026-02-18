@@ -279,22 +279,22 @@ const slides = [
   {
     title: "Political Research & Election Campaign Management",
     subtitle: "Providing precision leadership for the modern political landscape.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920"
+    image: "/bannerimg.png"
   },
   {
     title: "Governance & Public Policy Research",
     subtitle: "Evidence-based insights for smarter governance decisions.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1920"
+    image: "/bannerimg.png"
   },
   {
     title: "Social & Development Sector Research",
     subtitle: "Driving measurable impact through social intelligence.",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920"
+    image: "/bannerimg.png"
   },
   {
     title: "Monitoring & Evaluation",
     subtitle: "Tracking performance with transparent analytics.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920"
+    image: "/bannerimg.png"
   }
 ];
 
