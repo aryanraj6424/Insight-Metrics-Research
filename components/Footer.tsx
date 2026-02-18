@@ -190,10 +190,10 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span className="lowercase">insightmetrics1@gmail.com</span>
               </li>
 
-              <li className="flex items-start space-x-3 leading-relaxed">
+              {/* <li className="flex items-start space-x-3 leading-relaxed">
                 <MapPin size={18} className="text-[#EAB308] shrink-0" />
                 <span>Sector 12, Hubli-Dharwad Twin City, Karnataka, India.</span>
-              </li>
+              </li> */}
 
             </ul>
           </div>

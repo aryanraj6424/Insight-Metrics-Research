@@ -42,7 +42,7 @@ const App: React.FC = () => {
       case 'services': return <ServicesView onNavigate={handleNavigate} />;
       case 'service-detail': return <ServiceDetailView id={activeItemId} onNavigate={handleNavigate} />;
       case 'products': return <ProductsView onNavigate={handleNavigate} />;
-      case 'product-detail': return <ProductDetailView id={activeItemId} onNavigate={handleNavigate} />;
+      // case 'product-detail': return <ProductDetailView id={activeItemId} onNavigate={handleNavigate} />;
       case 'customers': return <CustomersView />;
       case 'gallery': return <GalleryView />;
       case 'testimonials': return <TestimonialsView />;

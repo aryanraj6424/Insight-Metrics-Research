@@ -149,193 +149,10 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       </section>
 
       {/* OUR TEAM SLIDER - Detailed Bios */}
-      {/* <section className="py-24 bg-slate-50 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="flex justify-between items-end">
-             <div className="space-y-4">
-               <h4 className="text-[#009ADE] font-black uppercase tracking-[0.2em] text-xs">The Advisory Board</h4>
-               <h2 className="text-4xl md:text-5xl font-black text-[#333333]">Our Team</h2>
-             </div>
-             <div className="flex space-x-4 mb-2">
-                <button 
-                  onClick={() => setCurrentTeamSlide((prev) => (prev - 1 + teamMembers.length) % teamMembers.length)}
-                  className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
-                >
-                  <ArrowLeft size={24} />
-                </button>
-                <button 
-                  onClick={() => setCurrentTeamSlide((prev) => (prev + 1) % teamMembers.length)}
-                  className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
-                >
-                  <ArrowRight size={24} />
-                </button>
-             </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative h-[750px] md:h-[500px]">
-            {teamMembers.map((member, i) => (
-              <div 
-                key={i} 
-                className={`absolute inset-0 transition-all duration-700 flex flex-col md:flex-row gap-12 items-center ${
-                  currentTeamSlide === i ? 'opacity-100 translate-x-0 pointer-events-auto' : 'opacity-0 translate-x-20 pointer-events-none'
-                }`}
-              >
-                <div className="w-full md:w-1/3 aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl relative group">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 brand-gradient text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
-                    <p className="text-sm font-black uppercase tracking-widest">{member.role}</p>
-                  </div>
-                </div>
-                <div className="w-full md:w-2/3 space-y-6">
-                  <div className="space-y-2">
-                    <h3 className="text-4xl font-black text-[#333333]">{member.name}</h3>
-                    <p className="text-[#009ADE] text-xl font-bold italic">{member.role}</p>
-                  </div>
-                  <div className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-white relative">
-                    <div className="absolute -top-6 -left-6 bg-[#EAB308] w-12 h-12 rounded-2xl flex items-center justify-center text-[#333333]">
-                      <Star fill="currentColor" size={24} />
-                    </div>
-                    <p className="text-gray-600 text-lg leading-relaxed first-letter:text-5xl first-letter:font-black first-letter:text-[#009ADE] first-letter:mr-3 first-letter:float-left">
-                      {member.bio}
-                    </p>
-                  </div>
-                  <div className="flex items-center space-x-4 pt-4">
-                    <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Connect:</span>
-                    <button className="text-gray-400 hover:text-[#009ADE] transition-colors font-bold uppercase text-xs tracking-widest underline decoration-2 underline-offset-4">LinkedIN Profile</button>
-                    <button className="text-gray-400 hover:text-[#009ADE] transition-colors font-bold uppercase text-xs tracking-widest underline decoration-2 underline-offset-4">Electoral History</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Slider Indicators */}
-          {/* <div className="flex justify-center space-x-3 mt-12 md:mt-20">
-            {teamMembers.map((_, i) => (
-              <button 
-                key={i}
-                onClick={() => setCurrentTeamSlide(i)}
-                className={`h-2 transition-all rounded-full ${currentTeamSlide === i ? 'w-12 bg-[#009ADE]' : 'w-4 bg-gray-200'}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section> */} 
+      
 
       {/* OUR TEAM SLIDER - Detailed Bios */}
-<section className="py-24 bg-slate-50 overflow-hidden relative">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-    <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
-      <div className="space-y-4">
-        <h4 className="text-[#009ADE] font-black uppercase tracking-[0.2em] text-xs">
-          The Advisory Board
-        </h4>
-        <h2 className="text-4xl md:text-5xl font-black text-[#333333]">
-          Our Team
-        </h2>
-      </div>
 
-      <div className="flex space-x-4">
-        <button
-          onClick={() =>
-            setCurrentTeamSlide(
-              (prev) => (prev - 1 + teamMembers.length) % teamMembers.length
-            )
-          }
-          className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
-        >
-          <ArrowLeft size={24} />
-        </button>
-
-        <button
-          onClick={() =>
-            setCurrentTeamSlide((prev) => (prev + 1) % teamMembers.length)
-          }
-          className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
-        >
-          <ArrowRight size={24} />
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    {/* KEY FIX HERE */}
-    <div className="relative min-h-[1000px] md:min-h-[560px]">
-
-      {teamMembers.map((member, i) => (
-        <div
-          key={i}
-          className={`transition-all duration-700 flex flex-col md:flex-row gap-12 items-center
-          ${
-            currentTeamSlide === i
-              ? "relative opacity-100 translate-x-0"
-              : "absolute inset-0 opacity-0 translate-x-20 pointer-events-none"
-          }`}
-        >
-
-          {/* IMAGE */}
-          <div className="w-full md:w-1/3 aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl relative group">
-            <img
-              src={member.img}
-              alt={member.name}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-            />
-          </div>
-
-          {/* TEXT */}
-          <div className="w-full md:w-2/3 space-y-6">
-
-            <div className="space-y-2">
-              <h3 className="text-3xl md:text-4xl font-black text-[#333333]">
-                {member.name}
-              </h3>
-
-              <p className="text-[#009ADE] text-lg md:text-xl font-bold italic">
-                {member.role}
-              </p>
-            </div>
-
-            <div className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-xl relative border">
-
-              <div className="absolute -top-5 -left-5 bg-[#EAB308] w-12 h-12 rounded-xl flex items-center justify-center text-[#333333]">
-                <Star fill="currentColor" size={22} />
-              </div>
-
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                {member.bio}
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      ))}
-    </div>
-
-    {/* DOTS */}
-    <div className="flex justify-center space-x-3 mt-12">
-      {teamMembers.map((_, i) => (
-        <button
-          key={i}
-          onClick={() => setCurrentTeamSlide(i)}
-          className={`h-2 rounded-full transition-all ${
-            currentTeamSlide === i
-              ? "w-12 bg-[#009ADE]"
-              : "w-4 bg-gray-300"
-          }`}
-        />
-      ))}
-    </div>
-  </div>
-</section>
 
 
       {/* OUR WORK SECTION - ELECTION TIMELINE */}
@@ -570,3 +387,117 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
 };
 
 export default HomeView;
+
+
+
+
+
+// // our team section for future use 
+
+// <section className="py-24 bg-slate-50 overflow-hidden relative">
+//   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+//     <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
+//       <div className="space-y-4">
+//         <h4 className="text-[#009ADE] font-black uppercase tracking-[0.2em] text-xs">
+//           The Advisory Board
+//         </h4>
+//         <h2 className="text-4xl md:text-5xl font-black text-[#333333]">
+//           Our Team
+//         </h2>
+//       </div>
+
+//       <div className="flex space-x-4">
+//         <button
+//           onClick={() =>
+//             setCurrentTeamSlide(
+//               (prev) => (prev - 1 + teamMembers.length) % teamMembers.length
+//             )
+//           }
+//           className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
+//         >
+//           <ArrowLeft size={24} />
+//         </button>
+
+//         <button
+//           onClick={() =>
+//             setCurrentTeamSlide((prev) => (prev + 1) % teamMembers.length)
+//           }
+//           className="w-14 h-14 rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-[#009ADE] hover:border-[#009ADE] hover:text-white transition-all"
+//         >
+//           <ArrowRight size={24} />
+//         </button>
+//       </div>
+//     </div>
+//   </div>
+
+//   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+//     {/* KEY FIX HERE */}
+//     <div className="relative min-h-[1000px] md:min-h-[560px]">
+
+//       {teamMembers.map((member, i) => (
+//         <div
+//           key={i}
+//           className={`transition-all duration-700 flex flex-col md:flex-row gap-12 items-center
+//           ${
+//             currentTeamSlide === i
+//               ? "relative opacity-100 translate-x-0"
+//               : "absolute inset-0 opacity-0 translate-x-20 pointer-events-none"
+//           }`}
+//         >
+
+//           {/* IMAGE */}
+//           <div className="w-full md:w-1/3 aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl relative group">
+//             <img
+//               src={member.img}
+//               alt={member.name}
+//               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+//             />
+//           </div>
+
+//           {/* TEXT */}
+//           <div className="w-full md:w-2/3 space-y-6">
+
+//             <div className="space-y-2">
+//               <h3 className="text-3xl md:text-4xl font-black text-[#333333]">
+//                 {member.name}
+//               </h3>
+
+//               <p className="text-[#009ADE] text-lg md:text-xl font-bold italic">
+//                 {member.role}
+//               </p>
+//             </div>
+
+//             <div className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-xl relative border">
+
+//               <div className="absolute -top-5 -left-5 bg-[#EAB308] w-12 h-12 rounded-xl flex items-center justify-center text-[#333333]">
+//                 <Star fill="currentColor" size={22} />
+//               </div>
+
+//               <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+//                 {member.bio}
+//               </p>
+//             </div>
+
+//           </div>
+
+//         </div>
+//       ))}
+//     </div>
+
+//     {/* DOTS */}
+//     <div className="flex justify-center space-x-3 mt-12">
+//       {teamMembers.map((_, i) => (
+//         <button
+//           key={i}
+//           onClick={() => setCurrentTeamSlide(i)}
+//           className={`h-2 rounded-full transition-all ${
+//             currentTeamSlide === i
+//               ? "w-12 bg-[#009ADE]"
+//               : "w-4 bg-gray-300"
+//           }`}
+//         />
+//       ))}
+//     </div>
+//   </div>
+// </section>

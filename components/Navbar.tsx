@@ -174,7 +174,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const menuItems: { name: string; id: Page }[] = [
     { name: 'Home', id: 'home' },
     { name: 'About Us', id: 'about' },
-    { name: 'Gallery', id: 'gallery' },
+    { name: 'Meet our team', id: 'gallery' },   // { name: 'Gallery', id: 'gallery' },
+    { name: 'Services', id: 'services' },
+    { name: 'Products', id: 'products' },
     { name: 'Contact', id: 'contact' },
   ];
 

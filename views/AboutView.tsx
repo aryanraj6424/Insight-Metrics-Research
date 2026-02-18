@@ -248,7 +248,7 @@ const AboutView: React.FC = () => {
             <img
               src={member.img}
               alt={member.name}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/60 to-transparent"></div>
 
