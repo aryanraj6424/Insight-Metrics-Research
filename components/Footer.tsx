@@ -164,7 +164,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="grid grid-cols-1 gap-y-4 text-gray-400 font-bold text-xs uppercase">
               <li><button onClick={() => onNavigate('home')} className="hover:text-white transition-colors text-left">Home</button></li>
               <li><button onClick={() => onNavigate('about')} className="hover:text-white transition-colors text-left">About Us</button></li>
-              <li><button onClick={() => onNavigate('gallery')} className="hover:text-white transition-colors text-left">Gallery</button></li>
+              <li><button onClick={() => onNavigate('gallery')} className="hover:text-white transition-colors text-left">Meet Our Team</button></li>
+              <li><button onClick={() => onNavigate('services')} className="hover:text-white transition-colors text-left">Services</button></li>
+              <li><button onClick={() => onNavigate('products')} className="hover:text-white transition-colors text-left">Products</button></li>
               <li><button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors text-left">Contact</button></li>
             </ul>
           </div>
