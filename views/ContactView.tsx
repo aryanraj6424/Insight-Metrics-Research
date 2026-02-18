@@ -247,28 +247,165 @@
 // export default ContactView;
 
 
-import React, { useState, useRef } from 'react';
-import { Mail, Phone, Send, ShieldCheck, MessageCircle, ArrowRight } from 'lucide-react';
-// Note: Install emailjs-com via npm to make the form functional
-// npm install @emailjs/browser
+// import React, { useState, useRef } from 'react';
+// import { Mail, Phone, Send, ShieldCheck, MessageCircle, ArrowRight } from 'lucide-react';
+// // Note: Install emailjs-com via npm to make the form functional
+// // npm install @emailjs/browser
+
+// const ContactView: React.FC = () => {
+//   const form = useRef<HTMLFormElement>(null);
+//   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     setFormStatus('sending');
+
+//     // EmailJS Integration Logic
+//     // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current!, 'YOUR_PUBLIC_KEY')
+    
+//     // Simulating API Call
+//     setTimeout(() => {
+//       setFormStatus('success');
+//       form.current?.reset();
+//     }, 2000);
+//   };
+
+//   return (
+//     <div className="animate-in fade-in duration-700 bg-white">
+//       {/* 1. HERO BANNER */}
+//       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+//         <div className="absolute inset-0 z-0">
+//           <img 
+//             src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1920" 
+//             alt="Contact Us Background" 
+//             className="w-full h-full object-cover"
+//           />
+//           <div className="absolute inset-0 bg-[#0B1C3F]/90 backdrop-blur-[3px]"></div>
+//         </div>
+        
+//         <div className="relative z-10 text-center space-y-4 px-4">
+//           <h4 className="text-[#009ADE] font-black uppercase tracking-[0.4em] text-sm">Connect With Us</h4>
+//           <h1 className="text-6xl md:text-7xl font-black text-white tracking-tighter">
+//             Contact Us
+//           </h1>
+//           <div className="w-24 h-2 bg-[#FFDB58] mx-auto rounded-full mt-4"></div>
+//         </div>
+//       </section>
+
+//       {/* 2. DIRECT CONTACT STRIP */}
+//       <section className="py-12 bg-slate-50 border-b">
+//         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-12">
+//           <div className="flex items-center space-x-4">
+//             <div className="p-4 bg-[#009ADE] text-white rounded-2xl shadow-lg">
+//               <Phone size={24} />
+//             </div>
+//             <div>
+//               <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Call Support</p>
+//               <p className="text-xl font-black text-[#333333]">+91 89433 23509</p>
+//               <p className="text-sm font-bold text-[#009ADE]">+91 99979 19080</p>
+//             </div>
+//           </div>
+
+//           <div className="h-12 w-[1px] bg-gray-200 hidden md:block"></div>
+
+//           <div className="flex items-center space-x-4">
+//             <div className="p-4 bg-[#FFDB58] text-[#333333] rounded-2xl shadow-lg">
+//               <Mail size={24} />
+//             </div>
+//             <div>
+//               <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Official Email</p>
+//               <p className="text-xl font-black text-[#333333]">insightmetrics1@gmail.com</p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* 3. SEND A MESSAGE (EMAIL FORM) */}
+//       <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="bg-white rounded-[4rem] shadow-2xl border border-slate-100 overflow-hidden">
+//           <div className="p-12 md:p-16">
+//             <div className="text-center space-y-4 mb-12">
+//               <h2 className="text-4xl font-black text-[#333333]">Get In Touch</h2>
+//               <p className="text-gray-500 font-medium max-w-md mx-auto">
+//                 Fill out the form below and your inquiry will be delivered directly to our strategy team's inbox.
+//               </p>
+//             </div>
+
+//             {formStatus === 'success' ? (
+//               <div className="bg-green-50 p-12 rounded-[3rem] text-center space-y-6 animate-in zoom-in duration-500 border border-green-100">
+//                 <div className="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto shadow-xl">
+//                   <ShieldCheck size={40} />
+//                 </div>
+//                 <h3 className="text-2xl font-black text-green-800">Message Delivered!</h3>
+//                 <p className="text-green-700 font-medium">Thank you. Your message has been sent directly to our email. We will get back to you shortly.</p>
+//                 <button onClick={() => setFormStatus('idle')} className="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition-colors">
+//                   Send Another Message
+//                 </button>
+//               </div>
+//             ) : (
+//               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+//                 <div className="grid md:grid-cols-2 gap-6">
+//                   <div className="space-y-2">
+//                     <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Full Name</label>
+//                     <input name="user_name" required type="text" placeholder="Your Name" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+//                   </div>
+//                   <div className="space-y-2">
+//                     <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Phone Number</label>
+//                     <input name="user_phone" required type="tel" placeholder="+91" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+//                   </div>
+//                 </div>
+                
+//                 <div className="space-y-2">
+//                   <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Email Address</label>
+//                   <input name="user_email" required type="email" placeholder="email@example.com" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+//                 </div>
+
+//                 <div className="space-y-2">
+//                   <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Message</label>
+//                   <textarea name="message" required rows={5} placeholder="How can we help you?" className="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333] resize-none"></textarea>
+//                 </div>
+
+//                 <button 
+//                   disabled={formStatus === 'sending'}
+//                   className={`w-full bg-[#333333] text-white py-6 rounded-[2rem] font-black text-xl shadow-xl transition-all flex items-center justify-center space-x-3 ${formStatus === 'sending' ? 'opacity-70' : 'hover:bg-[#009ADE] hover:-translate-y-1'}`}
+//                 >
+//                   <span>{formStatus === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}</span>
+//                   <Send size={24} className={formStatus === 'sending' ? 'animate-pulse' : ''} />
+//                 </button>
+//               </form>
+//             )}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* WhatsApp Floating Button */}
+//       <a 
+//         href="https://wa.me/918943323509" 
+//         target="_blank" 
+//         rel="noopener noreferrer"
+//         className="fixed bottom-10 right-10 z-[500] group flex items-center"
+//       >
+//         <div className="bg-white px-6 py-3 rounded-full shadow-2xl mr-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0 hidden md:block border">
+//           <p className="text-[#25D366] font-black text-sm whitespace-nowrap uppercase tracking-widest">Direct WhatsApp</p>
+//         </div>
+//         <div className="w-16 h-16 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+//           <MessageCircle size={32} fill="currentColor" />
+//         </div>
+//       </a>
+//     </div>
+//   );
+// };
+
+// export default ContactView;
+
+
+import React, { useState } from 'react';
+import { Mail, Phone, Send, ShieldCheck, MessageCircle, AlertCircle } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactView: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('sending');
-
-    // EmailJS Integration Logic
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current!, 'YOUR_PUBLIC_KEY')
-    
-    // Simulating API Call
-    setTimeout(() => {
-      setFormStatus('success');
-      form.current?.reset();
-    }, 2000);
-  };
+  // Replace "xgolzann" with your actual Formspree form ID
+  const [state, handleSubmit] = useForm("xgolzann");
 
   return (
     <div className="animate-in fade-in duration-700 bg-white">
@@ -320,7 +457,7 @@ const ContactView: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. SEND A MESSAGE (EMAIL FORM) */}
+      {/* 3. SEND A MESSAGE (FORMSPREE FORM) */}
       <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-[4rem] shadow-2xl border border-slate-100 overflow-hidden">
           <div className="p-12 md:p-16">
@@ -331,46 +468,85 @@ const ContactView: React.FC = () => {
               </p>
             </div>
 
-            {formStatus === 'success' ? (
+            {state.succeeded ? (
               <div className="bg-green-50 p-12 rounded-[3rem] text-center space-y-6 animate-in zoom-in duration-500 border border-green-100">
                 <div className="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto shadow-xl">
                   <ShieldCheck size={40} />
                 </div>
                 <h3 className="text-2xl font-black text-green-800">Message Delivered!</h3>
                 <p className="text-green-700 font-medium">Thank you. Your message has been sent directly to our email. We will get back to you shortly.</p>
-                <button onClick={() => setFormStatus('idle')} className="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition-colors">
+                <button 
+                  onClick={() => window.location.reload()} 
+                  className="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition-colors"
+                >
                   Send Another Message
                 </button>
               </div>
             ) : (
-              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {state.errors && state.errors.length > 0 && (
+                  <div className="bg-red-50 p-4 rounded-xl flex items-center gap-3 text-red-700 border border-red-100 mb-6">
+                    <AlertCircle size={20} />
+                    <p className="font-bold text-sm">Something went wrong. Please check your details.</p>
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Full Name</label>
-                    <input name="user_name" required type="text" placeholder="Your Name" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+                    <input 
+                      name="name" 
+                      required 
+                      type="text" 
+                      placeholder="Your Name" 
+                      className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" 
+                    />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Phone Number</label>
-                    <input name="user_phone" required type="tel" placeholder="+91" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+                    <input 
+                      name="phone" 
+                      required 
+                      type="tel" 
+                      placeholder="+91" 
+                      className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" 
+                    />
+                    <ValidationError prefix="Phone" field="phone" errors={state.errors} />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Email Address</label>
-                  <input name="user_email" required type="email" placeholder="email@example.com" className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" />
+                  <input 
+                    name="email" 
+                    required 
+                    type="email" 
+                    placeholder="email@example.com" 
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333]" 
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-2">Message</label>
-                  <textarea name="message" required rows={5} placeholder="How can we help you?" className="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333] resize-none"></textarea>
+                  <textarea 
+                    name="message" 
+                    required 
+                    rows={5} 
+                    placeholder="How can we help you?" 
+                    className="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-[#009ADE] outline-none transition-all font-bold text-[#333333] resize-none"
+                  ></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
 
                 <button 
-                  disabled={formStatus === 'sending'}
-                  className={`w-full bg-[#333333] text-white py-6 rounded-[2rem] font-black text-xl shadow-xl transition-all flex items-center justify-center space-x-3 ${formStatus === 'sending' ? 'opacity-70' : 'hover:bg-[#009ADE] hover:-translate-y-1'}`}
+                  type="submit"
+                  disabled={state.submitting}
+                  className={`w-full bg-[#333333] text-white py-6 rounded-[2rem] font-black text-xl shadow-xl transition-all flex items-center justify-center space-x-3 ${state.submitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#009ADE] hover:-translate-y-1'}`}
                 >
-                  <span>{formStatus === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}</span>
-                  <Send size={24} className={formStatus === 'sending' ? 'animate-pulse' : ''} />
+                  <span>{state.submitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                  <Send size={24} className={state.submitting ? 'animate-pulse' : ''} />
                 </button>
               </form>
             )}
