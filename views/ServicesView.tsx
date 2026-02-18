@@ -63,12 +63,12 @@ interface ServicesViewProps {
 
 const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate }) => {
   const services = [
-    { id: '1', title: 'Digital Governance', desc: 'Bringing 100% of municipal services online for citizen convenience.', icon: <Laptop /> },
-    { id: '2', title: 'Healthcare Excellence', desc: 'Modernizing PHCs and hospital infrastructure across the region.', icon: <Heart /> },
-    { id: '3', title: 'Infrastructure Development', desc: 'Smart roads, waste management, and green urban planning.', icon: <Zap /> },
-    { id: '4', title: 'Global Connectivity', desc: 'Establishing tech hubs to connect local talent with global markets.', icon: <Globe /> },
-    { id: '5', title: 'Public Safety', desc: 'Enhanced security monitoring and emergency response systems.', icon: <Shield /> },
-    { id: '6', title: 'Youth Empowerment', desc: 'Skills training and startup incubation centers.', icon: <Users /> },
+    { id: '1', title: 'Research & Data Analytics', desc: 'Transforming raw data into actionable political intelligence through advanced modeling.', icon: <Laptop /> },
+    { id: '2', title: 'Constituency & Candidate Profiling', desc: 'Deep demographic analysis and perception mapping for targeted outreach.', icon: <Heart /> },
+    { id: '3', title: 'Strategy & Narrative Building', desc: 'Crafting powerful, data-backed narratives that resonate with local realities.', icon: <Zap /> },
+    { id: '4', title: 'Booth Management System', desc: 'Precision logistics and real-time monitoring at the granular booth level.', icon: <Globe /> },
+    { id: '5', title: 'Online & Offline Campaign Management', desc: 'Seamlessly integrated digital presence and grassroots mobilization.', icon: <Shield /> },
+    { id: '6', title: 'Digital War Room Coordination', desc: ' Real-Time response infrastructure for rapid strategic pivots.', icon: <Users /> },
   ];
 
   return (

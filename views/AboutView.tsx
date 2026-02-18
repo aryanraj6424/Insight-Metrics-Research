@@ -39,7 +39,8 @@ const AboutView: React.FC = () => {
     { year: '2019', event: 'Lok Sabha Elections', detail: 'National level campaign diagnostics and constituency profiling.' },
     { year: '2021', event: 'Kerala Assembly Elections', detail: 'Comprehensive booth-level management and digital war room ops.' },
     { year: '2022', event: 'Uttar Pradesh Assembly Elections', detail: 'Mass-scale policy research and social development auditing.' },
-    { year: '2024', event: 'Lok Sabha Elections', detail: 'Data-driven precision strategy for multi-state campaign management.' }
+    { year: '2024', event: 'Lok Sabha Elections', detail: 'Data-driven precision strategy for multi-state campaign management.' },
+    { year: '2026', event: 'Kerala Assembly Elections', detail: 'Comprehensive booth-level management and digital war room ops.' }
   ];
 
   useEffect(() => {
